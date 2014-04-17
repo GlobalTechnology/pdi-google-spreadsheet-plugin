@@ -89,9 +89,9 @@ public class GoogleSpreadsheetInput extends BaseStep implements StepInterface {
 
             if (data.currentRow < data.rows.size()) {
                 ListEntry row = data.rows.get(data.currentRow);
-                for (String tag : row.getCustomElements().getTags()) {
-                    String value = row.getCustomElements().getValue(tag);
-                    if( value == null )
+                for (ValueMetaInterface column : data.outputRowMeta.getValueMetaList()) {
+                    String value = row.getCustomElements().getValue(column.getName());
+                    if (value == null)
                         outputRowData[outputIndex++] = null;
                     else
                         outputRowData[outputIndex++] = value.getBytes("UTF-8");
