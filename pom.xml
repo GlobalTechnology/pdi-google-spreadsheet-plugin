@@ -63,6 +63,13 @@
         </repository>
     </repositories>
 
+    <distributionManagement>
+        <repository>
+            <id>maven.gcx.org</id>
+            <url>https://maven.gcx.org</url>
+        </repository>
+    </distributionManagement>
+
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
         <resources>
@@ -91,6 +98,28 @@
                         <goals>
                             <goal>single</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.7</version>
+                <executions>
+                    <execution>
+                        <id>attach-artifacts</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>target/${project.build.finalName}.zip</file>
+                                    <type>zip</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
