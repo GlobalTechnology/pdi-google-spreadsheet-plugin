@@ -115,7 +115,7 @@ public class GoogleSpreadsheetInputMeta extends BaseStepMeta implements StepMeta
         retval.setServiceEmail(this.serviceEmail);
         retval.setPrivateKeyStore(this.privateKeyStore);
         retval.setSpreadsheetKey(this.spreadsheetKey);
-        retval.setWorksheetId(this.spreadsheetKey);
+        retval.setWorksheetId(this.worksheetId);
         return retval;
     }
 
