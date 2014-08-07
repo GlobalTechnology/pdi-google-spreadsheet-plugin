@@ -9,6 +9,12 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+    <scm>
+        <connection>scm:git:git@github.com:GlobalTechnology/pdi-google-spreadsheet-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:GlobalTechnology/pdi-google-spreadsheet-plugin.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <kettle.version>5.0.5</kettle.version>
@@ -123,7 +129,16 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <localCheckout>true</localCheckout>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
 </project>
