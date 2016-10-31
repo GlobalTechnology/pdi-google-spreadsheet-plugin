@@ -9,7 +9,7 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.client.util.Base64;
-import com.google.gdata.client.spreadsheet.FeedURLFactory;
+//import com.google.gdata.client.spreadsheet.FeedURLFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -29,7 +29,7 @@ public class GoogleSpreadsheet {
     private static final JsonFactory JSON_FACTORY = new JacksonFactory();
     private static final List<String> SCOPES = Arrays.asList("https://spreadsheets.google.com/feeds",
             "https://docs.google.com/feeds");
-    private static final FeedURLFactory FEED_URL_FACTORY = FeedURLFactory.getDefault();
+    //private static final FeedURLFactory FEED_URL_FACTORY = FeedURLFactory.getDefault();
 
     public static String base64EncodePrivateKeyStore(KeyStore pks) throws GeneralSecurityException, IOException {
         if (pks != null && pks.containsAlias("privatekey")) {
@@ -84,8 +84,9 @@ public class GoogleSpreadsheet {
         return null;
     }
 
-    private static URL getSpreadsheetFeedURL() {
-        return GoogleSpreadsheet.FEED_URL_FACTORY.getSpreadsheetsFeedUrl();
-    }
+   private static URL getSpreadsheetFeedURL() {
+        //return GoogleSpreadsheet.FEED_URL_FACTORY.getSpreadsheetsFeedUrl();
+       return null;
+   }
 
 }
