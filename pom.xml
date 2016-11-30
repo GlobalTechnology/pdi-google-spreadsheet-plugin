@@ -73,6 +73,13 @@
             <artifactId>core</artifactId>
             <version>1.47.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-drive -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-drive</artifactId>
+            <version>v3-rev52-1.22.0</version>
+        </dependency>
+
     </dependencies>
 
     <repositories>
