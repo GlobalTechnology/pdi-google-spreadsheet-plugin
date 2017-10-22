@@ -47,3 +47,8 @@ Clicking **Test Connection** on the Service Account tab will test if the provide
 The Connection must be successful before you can *Browse* for a Spreadsheet or Worksheet.
 
 When using the Google Spreadsheet Input Step, you must also fetch the list of Fields before the step will return any data.
+
+Tutorials
+------------------
+Using Pentaho Data Integration and Google Driver Sheets (in Portuguese)
+http://blogs.ambientelivre.com.br/marcio/acessando-documentos-no-drive-da-google-com-pentaho-data-integration?utm_source=blog&utm_medium=github&utm_campaign=Growth_Hacking_Tutorial_plugin
