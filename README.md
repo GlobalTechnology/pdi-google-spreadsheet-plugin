@@ -38,7 +38,7 @@ Step Configuration
 ------------------
 | Property               | Description |
 |:-----------------------|:------------|
-| Email Address          | Service Account E-Mail Address. This is provided in the Google API Console. |
+| Email Address          | Service Account E-Mail Address. This is provided in the Google API Console. Sample: 663775520999-32h3o43i97xx4hcivkuv9drfbmmoutd0@developer.gserviceaccount.com |
 | Private Key (p12) file | Private Key associated with the Email Address Entered. This is provided when the Service Account is created in the Google API Console. The Client Id of the Private Key will be displayed and should match the beginning of the Email Address |
 | Spreadsheet Key        | Unique Spreadsheet Key. *Browse* will present a list of all Spreadsheets the current Service Account has access to. |
 | Worksheet Id           | Worksheet Id. *Browse* will list all Worksheets in selected Spreadsheet  |
