@@ -15,7 +15,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <kettle.version>5.0.5</kettle.version>
+        <kettle.version>8.1.0.0-365</kettle.version>
     </properties>
 
     <dependencies>
@@ -63,7 +63,7 @@
     <repositories>
         <repository>
             <id>pentaho-releases</id>
-            <url>http://repository.pentaho.org/artifactory/repo/</url>
+            <url>https://nexus.pentaho.org/content/groups/omni/</url>
         </repository>
     </repositories>
 
