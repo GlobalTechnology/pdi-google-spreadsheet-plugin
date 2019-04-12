@@ -1,3 +1,6 @@
+# This project is no longer maintained.
+Contact owner if you'd like to transfer ownership and maintain it.
+
 pdi-google-spreadsheet-plugin
 =============================
 
