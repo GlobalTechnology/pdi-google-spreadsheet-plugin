@@ -4,6 +4,8 @@ Contact owner if you'd like to transfer ownership and maintain it.
 pdi-google-spreadsheet-plugin
 =============================
 
+**NOTE**: This is forked from [GlobalTechnology](https://github.com/GlobalTechnology/pdi-google-spreadsheet-plugin) due to apparent inactivity. Should the upstream repo merge changes and be maintained, this repo will be dropped. 
+
 Plugin for Pentaho Data Integration(Kettle) allowing reading and writing of Google Spreadsheets.
 
 Limitations
