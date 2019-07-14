@@ -13,6 +13,7 @@ import org.pentaho.di.trans.TransMeta;
 import org.pentaho.di.trans.step.*;
 
 import java.net.URL;
+import java.util.List;
 
 public class GoogleSpreadsheetInput extends BaseStep implements StepInterface {
 
@@ -39,7 +40,7 @@ public class GoogleSpreadsheetInput extends BaseStep implements StepInterface {
                 }
                 data.service = new SpreadsheetService("PentahoKettleTransformStep-v1");
                 data.service.setHeader("Authorization", "Bearer " + data.accessToken);
-
+                checkWorkSheetId(data.service, meta);
                 URL listFeedURL = FeedURLFactory.getDefault().getListFeedUrl(meta.getSpreadsheetKey(), meta.getWorksheetId(), "private", "full");
                 ListFeed listFeed = data.service.getFeed(listFeedURL, ListFeed.class);
                 data.rows = listFeed.getEntries();
@@ -102,6 +103,27 @@ public class GoogleSpreadsheetInput extends BaseStep implements StepInterface {
             return outputRowData;
         } catch (Exception e) {
             return null;
+        }
+    }
+    
+    public void checkWorkSheetId(SpreadsheetService service, GoogleSpreadsheetInputMeta meta) {
+        try {
+            WorksheetFeed feed = service.getFeed(FeedURLFactory.getDefault().getWorksheetFeedUrl(meta.getSpreadsheetKey(), "private", "full"), WorksheetFeed.class);
+            List<WorksheetEntry> worksheets = feed.getEntries();
+            int selectedSheet = -1;
+            for (int i = 0; i < worksheets.size(); i++) {
+                WorksheetEntry sheet = worksheets.get(i);
+                if (sheet.getId().endsWith("/" + meta.getWorksheetId())) {
+                    selectedSheet = i;
+                }
+            }
+            if (selectedSheet == -1) {
+                String id = worksheets.get(0).getId();
+                String sheetId = id.substring(id.lastIndexOf("/") + 1);
+                meta.setWorksheetId(sheetId);
+            }
+        } catch (Exception err) {
+            logError("Error : " + err.getMessage(), err);
         }
     }
 }
